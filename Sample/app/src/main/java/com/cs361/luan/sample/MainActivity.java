@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,6 +45,23 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 triggerActivityView();
+            }
+        });
+
+        final EditText username = (EditText) findViewById(R.id.register_username_text);
+        final EditText password = (EditText) findViewById(R.id.register_password_text);
+        final EditText confirm = (EditText) findViewById(R.id.register_confirm_text);
+        final EditText email = (EditText) findViewById(R.id.register_email_text);
+        final EditText phone = (EditText) findViewById(R.id.register_phone_text);
+
+        Button registerSubmitButton = (Button) findViewById(R.id.regster_submit_button);
+        registerSubmitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("Username: " + username.getText());
+                System.out.println("Password: " + password.getText());
+                System.out.println("Email: " + email.getText());
+                System.out.println("Phone: " + phone.getText());
             }
         });
     }
