@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:id="@+id/imageView"
+        android:layout_x="0dp"
+        android:layout_y="0dp"
+        android:background="@color/background_floating_material_dark" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="387dp"
+        android:layout_x="0dp"
+        android:layout_y="128dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="Please ENTER your username and password and then click button [LOGIN] to sign in this app."
+            android:id="@+id/textView9" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Username: "
+            android:id="@+id/textView"
+            android:layout_x="539dp"
+            android:layout_y="341dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText"
+            android:layout_x="744dp"
+            android:layout_y="172dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password: "
+            android:id="@+id/textView2"
+            android:layout_x="509dp"
+            android:layout_y="259dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/editText2"
+            android:layout_x="658dp"
+            android:layout_y="293dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:text="Login"
+                android:id="@+id/button"
+                android:layout_x="816dp"
+                android:layout_y="513dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:text="Reset"
+                android:id="@+id/button2"
+                android:layout_x="1008dp"
+                android:layout_y="474dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Quit"
+            android:id="@+id/button3" />
+
+    </LinearLayout>
+</AbsoluteLayout>
