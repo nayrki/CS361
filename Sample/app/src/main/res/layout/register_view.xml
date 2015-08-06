@@ -170,14 +170,14 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="Submit"
-                    android:id="@+id/button4"
+                    android:id="@+id/regster_submit_button"
                     android:layout_weight="1" />
 
                 <Button
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="Reset"
-                    android:id="@+id/button5"
+                    android:id="@+id/register_reset_button"
                     android:layout_weight="1" />
             </LinearLayout>
 
@@ -185,7 +185,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Return Home"
-                android:id="@+id/button6" />
+                android:id="@+id/register_home_button" />
         </LinearLayout>
     </ScrollView>
 

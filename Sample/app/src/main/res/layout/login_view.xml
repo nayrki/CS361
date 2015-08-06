@@ -64,7 +64,7 @@
                 android:layout_width="128dp"
                 android:layout_height="wrap_content"
                 android:text="Login"
-                android:id="@+id/button"
+                android:id="@+id/login_button"
                 android:layout_x="816dp"
                 android:layout_y="513dp"
                 android:layout_weight="1" />
@@ -73,7 +73,7 @@
                 android:layout_width="128dp"
                 android:layout_height="wrap_content"
                 android:text="Reset"
-                android:id="@+id/button2"
+                android:id="@+id/login_reset_button"
                 android:layout_x="1008dp"
                 android:layout_y="474dp"
                 android:layout_weight="1" />
@@ -83,7 +83,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Quit"
-            android:id="@+id/button3" />
+            android:id="@+id/login_quit_button" />
 
     </LinearLayout>
 </AbsoluteLayout>
