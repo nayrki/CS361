@@ -3,12 +3,21 @@
 
 
 
-static public class User{
-	private int id;
+public class User{
+	static private int id;
 	static public boolean logged_in;
 	
-	static public boolean login(String username, String Password)
+	static public boolean login(String username, String password)
 	{
+		HttpClient client = new DefaultHttpClient();
+		HttpPOST post = new HttpPost("http://web.engr.oregonstate.edu/~kitchenr/WaDa/login.php");
+		List<NameValuePair> postdata = new ArrayList<NameValuePair>(2);
+		postdata.add(new BasicNameValuePair("username",username));
+		postdata.add(new BasicNameValuePair("password",password));
+		post.setEntity(new UrlENcodedFormEntity(postdata));
+		
+		HttpResponse response = client.execute(post);
+		
 		return true;
 	}
 	
