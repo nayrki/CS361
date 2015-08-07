@@ -58,16 +58,30 @@ public class MainActivity extends AppCompatActivity {
         registerSubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("Username: " + username.getText());
-                System.out.println("Password: " + password.getText());
-                System.out.println("Email: " + email.getText());
-                System.out.println("Phone: " + phone.getText());
+                if(password.getText().toString().equals(confirm.getText().toString())) {
+                    System.out.println("Username: " + username.getText());
+                    System.out.println("Password: " + password.getText());
+                    System.out.println("Email: " + email.getText());
+                    System.out.println("Phone: " + phone.getText());
+                }
             }
         });
     }
 
     private void triggerLoginView() {
         setContentView(R.layout.login_view);
+
+        final EditText username = (EditText) findViewById(R.id.login_username_text);
+        final EditText password = (EditText) findViewById(R.id.login_password_text);
+
+        Button loginSubmitButton = (Button) findViewById(R.id.login_login_button);
+        loginSubmitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean isSucc = DatabaseFunctions.login(username.getText().toString(), password.getText().toString());
+                System.out.println(isSucc);
+            }
+        });
 
         Button loginQuitButton = (Button) findViewById(R.id.login_quit_button);
         loginQuitButton.setOnClickListener(new View.OnClickListener() {
