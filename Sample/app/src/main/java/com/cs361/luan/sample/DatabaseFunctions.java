@@ -30,6 +30,7 @@ public class DatabaseFunctions{
 			postdata.add(new BasicNameValuePair("password", password));
 			post.setEntity(new UrlEncodedFormEntity(postdata));
 			HttpResponse response = client.execute(post);
+			System.out.println("Response: " + response.toString());
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 boolean isSucc = DatabaseFunctions.login(username.getText().toString(), password.getText().toString());
-                System.out.println(isSucc);
+                System.out.println((isSucc) ? "Success to Login" : "Fail to Login.");
             }
         });
 
