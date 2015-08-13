@@ -2,6 +2,7 @@ package com.cs361.luan.sample;
 
 import android.os.*;
 import android.os.Process;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -59,11 +60,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(password.getText().toString().equals(confirm.getText().toString())) {
-                    System.out.println("Username: " + username.getText());
-                    System.out.println("Password: " + password.getText());
-                    System.out.println("Email: " + email.getText());
-                    System.out.println("Phone: " + phone.getText());
-                }
+                    boolean isSucc = DatabaseFunctions.create(username.getText().toString(), password.getText().toString(), null, email.getText().toString());
+                    System.out.println((isSucc) ? "Success to Register" : "Fail to Register");
+                } else
+                    System.out.println("Both input passwords are not the same, and please enter again.");
             }
         });
     }

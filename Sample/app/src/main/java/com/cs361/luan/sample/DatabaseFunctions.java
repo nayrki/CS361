@@ -8,13 +8,14 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class DatabaseFunctions{
 
 	private int id;
-	private boolean login;
+	private static boolean isLogin = false, isRegister = false;
 
 	/**
 	 * @param username
@@ -30,13 +31,39 @@ public class DatabaseFunctions{
 			postdata.add(new BasicNameValuePair("password", password));
 			post.setEntity(new UrlEncodedFormEntity(postdata));
 			HttpResponse response = client.execute(post);
-			System.out.println("Response: " + response.toString());
-			return true;
+			isLogin = true;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-		return false;
+		return isLogin;
+	}
+
+	/**
+	 *
+	 * @param username
+	 * @param password
+	 * @param name
+	 * @param email
+	 * @return
+	 */
+	public static boolean create(String username, String password, String name, String email) {
+		try {
+			HttpClient client = new DefaultHttpClient();
+			HttpPost post = new HttpPost("http://web.engr.oregonstate.edu/~kitchenr/WaDa/newuser.php");
+			List<NameValuePair> postdata = new ArrayList<NameValuePair>(2);
+			postdata.add(new BasicNameValuePair("username", username));
+			postdata.add(new BasicNameValuePair("password", password));
+			postdata.add(new BasicNameValuePair("name", name));
+			postdata.add(new BasicNameValuePair("email", email));
+			post.setEntity(new UrlEncodedFormEntity(postdata));
+			HttpResponse response = client.execute(post);
+			isRegister = true;
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+
+		return isRegister;
 	}
 	
 	/**
